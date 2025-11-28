@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rooms - Exam Seating System</title>
+  <link rel="stylesheet" href="rooms.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Exam Seating Management System</h1>
+      <p>Exam Room Master</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="departments.html">Departments</a>
+      <a href="semesters.html">Semesters</a>
+      <a href="students.html">Students</a>
+      <a href="rooms.html" class="active">Rooms</a>
+      <a href="plans.html">Seating Plans</a>
+    </nav>
+
+    <section class="section">
+      <h2>Add / Edit Room</h2>
+      <div class="form-card">
+        <form id="roomForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="roomCode">Room Code</label>
+              <input type="text" id="roomCode" required placeholder="e.g. CS-101" />
+            </div>
+            <div class="form-group">
+              <label for="roomName">Room Name</label>
+              <input type="text" id="roomName" required placeholder="e.g. Lab 1" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="roomRows">Rows</label>
+              <input type="number" id="roomRows" required min="1" value="4" />
+            </div>
+            <div class="form-group">
+              <label for="roomCols">Columns</label>
+              <input type="number" id="roomCols" required min="1" value="5" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="roomSubmitBtn">Save Room</button>
+          <button type="button" class="btn btn-secondary" id="roomCancelEditBtn" style="display:none;">
+            Cancel Edit
+          </button>
+        </form>
+      </div>
+
+      <h2>Room List</h2>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Rows</th>
+              <th>Cols</th>
+              <th>Capacity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="roomTableBody">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="rooms.js"></script>
+</body>
+</html>

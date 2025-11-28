@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Semesters - Exam Seating System</title>
+  <link rel="stylesheet" href="semesters.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Exam Seating Management System</h1>
+      <p>Semester / Exam Detail</p>
+    </header>
+
+    <nav class="top-nav">
+      <a href="departments.html">Departments</a>
+      <a href="semesters.html" class="active">Semesters</a>
+      <a href="students.html">Students</a>
+      <a href="rooms.html">Rooms</a>
+      <a href="plans.html">Seating Plans</a>
+    </nav>
+
+    <section class="section">
+      <h2>Add / Edit Semester</h2>
+      <div class="form-card">
+        <form id="semForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="semDept">Department</label>
+              <select id="semDept" required></select>
+            </div>
+            <div class="form-group">
+              <label for="semCode">Semester Code</label>
+              <input type="text" id="semCode" required placeholder="e.g. CS-5" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="semTitle">Semester Title</label>
+              <input type="text" id="semTitle" required placeholder="e.g. 5th Semester" />
+            </div>
+            <div class="form-group">
+              <label for="semDate">Exam Date</label>
+              <input type="date" id="semDate" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="semSubmitBtn">Save Semester</button>
+          <button type="button" class="btn btn-secondary" id="semCancelEditBtn" style="display:none;">
+            Cancel Edit
+          </button>
+        </form>
+      </div>
+
+      <h2>Semester List</h2>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Dept</th>
+              <th>Sem Code</th>
+              <th>Sem Title</th>
+              <th>Exam Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="semTableBody">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="semesters.js"></script>
+</body>
+</html>
